@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caracteres de nombre </title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <h1>Ingresa los nombres</h1>
+    <form action="/nombres" method="POST">
+        <label for="nombre1">Nombre 1:</label><br>
+        <input type="text" id="nombre1" name="nombre1" required>
+        <br>
+        <label for="nombre2">Nombre 2:</label><br>
+        <input type="text" id="nombre2" name="nombre2" required>
+        <br>
+        <label for="nombre3">Nombre 3:</label><br>
+        <input type="text" id="nombre3" name="nombre3" required>
+        <br>
+        <button type="submit">Enviar</button>
+    </form>
+    {% if mas_len is not none and count is not none%}
+    <div>
+        <p>El nombre con más caracteres es: {{ mas_len }}</p> 
+        <p>El nombre tiene {{count }} caracteres</p>
+    </div>
+    {% endif %}
+
+</body>
+</html>
